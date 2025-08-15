@@ -19,6 +19,8 @@ Online Poll is a Django-based web application designed to conduct secure, web-ba
 
 **System-Generated Credentials:** Automated creation of secure credentials for both candidates and voters.
 
+
+
 **Technology Stack**
 
 **Backend:** Python 3.x, Django Framework (MVT pattern)
@@ -28,6 +30,8 @@ Online Poll is a Django-based web application designed to conduct secure, web-ba
 **Database:** SQLite3 (default with Django)
 
 **Tools:** Visual Studio Code (or any preferred code editor)
+
+
 
 **Prerequisites**
 
@@ -41,6 +45,8 @@ SQLite3 (bundled with Django)
 
 Code editor such as VS Code
 
+
+
 **Installation & Setup**
 
 **Clone the repository**
@@ -48,6 +54,7 @@ Code editor such as VS Code
 git clone https://github.com/<your-username>/Online-Poll.git
 
 cd Online-Poll
+
 
 **Create and activate a virtual environment**
 
@@ -57,27 +64,33 @@ venv\Scripts\activate   # On Windows
 
 source venv/bin/activate  # On macOS/Linux
 
+
 **Install dependencies**
 
 pip install -r requirements.txt
+
 
 **Run migrations**
 
 python manage.py migrate
 
+
 **Create a superuser (for admin access)**
 
 python manage.py createsuperuser
 
+
 **Start the development server**
 
 python manage.py runserver
+
 
 **Access the application**
 
 Voter/Candidate Portal: http://localhost:8000
 
 Admin Dashboard: http://localhost:8000/admin
+
 
 **Usage**
 
