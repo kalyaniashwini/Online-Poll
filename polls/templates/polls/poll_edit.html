@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Edit Poll</h3>
+<form method="post">
+  {% csrf_token %}
+  <div class="form-group">
+    {{ form.text.label_tag }} {{ form.text }}
+  </div>
+  <div class="form-check">
+    <label class="form-check-label">
+      {{ form.active }} Active
+    </label>
+  </div>
+  <button class="btn btn-primary mt-2">Save</button>
+</form>
+<h4 class="mt-4">Choices</h4>
+<ul class="list-group">
+  {% for c in poll.choice_set.all %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      {{ c.choice_text }}
+      <span>
+        <a class="btn btn-sm btn-outline-info" href="{% url 'polls:choice_edit' c.id %}">Edit</a>
+        <a class="btn btn-sm btn-outline-danger" href="{% url 'polls:choice_delete' c.id %}">Delete</a>
+      </span>
+    </li>
+  {% empty %}
+    <li class="list-group-item">No choices yet.</li>
+  {% endfor %}
+</ul>
+<a class="btn btn-outline-primary mt-3" href="{% url 'polls:choice_add' poll.id %}">Add Choice</a>
+{% endblock %}

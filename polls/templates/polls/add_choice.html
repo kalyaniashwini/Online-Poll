@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>{% if edit_choice %}Edit Choice{% else %}Add Choice{% endif %}</h3>
+<form method="post">
+  {% csrf_token %}
+  <div class="form-group">
+    {{ form.choice_text.label_tag }} {{ form.choice_text }}
+  </div>
+  <button class="btn btn-primary">{% if edit_choice %}Update{% else %}Add{% endif %}</button>
+</form>
+{% endblock %}

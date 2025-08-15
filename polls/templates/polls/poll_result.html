@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Results: {{ poll.text }}</h3>
+{% for row in poll.get_result_dict %}
+  <div class="alert alert-{{ row.alert_class }}">
+    <strong>{{ row.text }}</strong> — {{ row.num_votes }} votes ({{ row.percentage|floatformat:2 }}%)
+  </div>
+{% endfor %}
+<a class="btn btn-secondary" href="{% url 'polls:list' %}">Back to Polls</a>
+{% endblock %}
